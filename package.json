@@ -1,0 +1,9 @@
+{
+  "name": "intelligent-api-security-dashboard",
+  "version": "1.0.0",
+  "description": "Beginner-level full-stack API security testing dashboard (college project)",
+  "private": true,
+  "scripts": {
+    "info": "See README.md for how to run test-api, backend, and frontend separately."
+  }
+}

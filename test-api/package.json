@@ -1,0 +1,13 @@
+{
+  "name": "test-api",
+  "version": "1.0.0",
+  "description": "Local Demo/Test API - For Educational Testing Only. Used to demonstrate the Intelligent API Security Testing Dashboard.",
+  "main": "demoApi.js",
+  "scripts": {
+    "start": "node demoApi.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
