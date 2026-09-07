@@ -561,8 +561,7 @@ lose *some* features under failure, not *all* of them.
 
 ## PART 7 — ERROR HANDLING PHILOSOPHY (ACROSS THE WHOLE APP)
 
-A recurring theme throughout this project, worth stating explicitly in
-a viva: **nothing the user does should be able to crash the app.**
+A recurring theme throughout this project: **nothing the user does should be able to crash the app.**
 
 - Invalid/missing URL → backend returns `400 Bad Request` with a clear
   message, instead of throwing an unhandled exception.
@@ -582,7 +581,7 @@ a viva: **nothing the user does should be able to crash the app.**
 
 ---
 
-## PART 8 — LIMITATIONS (IMPORTANT TO STATE HONESTLY IN A VIVA)
+## PART 8 — LIMITATIONS 
 
 Being upfront about limitations is itself good security/engineering
 practice — overclaiming what a tool can do is a real-world problem with
@@ -608,38 +607,4 @@ than it can prove:
 
 ---
 
-## PART 9 — QUICK-REFERENCE CHEAT SHEET FOR YOUR VIVA
-
-**"What does your project do?"**
-> It's a small dashboard that sends a few safe, controlled test requests
-> to a REST API and checks it for four common weaknesses — BOLA,
-> property-level authorization issues, sensitive data exposure, and
-> missing rate limiting — then explains each finding using both a
-> rule-based system and Google's Gemini AI.
-
-**"Why three separate servers?"**
-> To separate the UI (React), the testing logic (Node/Express backend),
-> and the target being tested (the demo API) — this mirrors how real
-> security tools are structured, and keeps the Gemini API key safely
-> isolated on the backend.
-
-**"How do you avoid actually attacking anything?"**
-> Every test is capped to the smallest possible number of requests
-> needed to demonstrate the concept — one neighboring ID for BOLA, one
-> property-change attempt, one read for sensitive data, and a maximum
-> of five requests for rate limiting.
-
-**"How is the Gemini key kept safe?"**
-> It's stored in a `.env` file that's excluded from Git via
-> `.gitignore`, read only inside the backend using the `dotenv`
-> package, and never sent to or exposed in the frontend/browser.
-
-**"What happens if Gemini fails?"**
-> The backend catches the failure and returns a friendly fallback
-> message along with the rule-based explanation — the app never
-> crashes and always has something useful to show.
-
-**"How is the score calculated?"**
-> Starting from 100, each non-PASS finding subtracts points based on
-> severity (Critical -25, High -20, Medium -10, Low -5), clamped
-> between 0–100, then mapped to a risk label (Excellent/Good/Medium/Poor).
+ a risk label (Excellent/Good/Medium/Poor).
