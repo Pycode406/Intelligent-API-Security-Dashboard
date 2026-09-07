@@ -100,7 +100,7 @@ Local Demo/Test API (localhost:5000)
    things and collect input. The backend's job is only to run tests and
    talk to Gemini. The demo API's job is only to *be* a target to scan.
    Mixing these together would make the code much harder to understand,
-   debug, and explain in a viva.
+   debug, and explain.
 2. **Realism** — in real life, the tool you use to scan an API is never
    the same server as the API being scanned. Structuring it this way
    makes the project behave like a real-world security tool.
