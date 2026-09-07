@@ -1,9 +1,7 @@
 # Intelligent API Security Testing Dashboard — Complete Explanation
 
 This document explains **every file, every technology, and every security
-concept** used in this project, in beginner-friendly language. Read it
-top to bottom and you should be able to explain any part of this project
-confidently in a viva.
+concept** used in this project, in beginner-friendly language.
 
 ---
 
