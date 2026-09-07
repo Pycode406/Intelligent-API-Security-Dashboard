@@ -247,7 +247,7 @@ detail in Part 6 (AI Integration Security).
 
 #### `backend/scanner/` — the actual detection logic
 
-This is the most important folder to understand for your viva, since
+This is the most important folder to understand, since
 it's where the real "security testing" happens. Each file is a small,
 focused module — this is called the **Single Responsibility
 Principle**: each file does exactly one job, which makes it much
