@@ -447,7 +447,7 @@ long combined page.
 
 ### 4.1 How does the tech stack itself contribute to security (not just the scanning logic)?
 
-This is an important distinction for your viva: **some security comes
+This is an important distinction: **some security comes
 from what the app *checks*, and some comes from how the app *itself* is
 built.** Examples of the second kind, present in this project:
 
