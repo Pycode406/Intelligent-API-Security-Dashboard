@@ -55,7 +55,7 @@ different from just printing PASS/FAIL":
 4. **OWASP Mapping** — connects the finding to the recognized industry
    standard, so it's not just "this looks bad," but "this maps to a
    known, documented category of risk."
-5. **Recommendation** — a concrete, actionable fix.
+5. **Recommendation** — a concrete, actionable fix(Generally works when AI doesnt work).
 
 This mirrors how **real-world security tools** (like Burp Suite, OWASP
 ZAP, or Postman's API security testing) present findings — they never
