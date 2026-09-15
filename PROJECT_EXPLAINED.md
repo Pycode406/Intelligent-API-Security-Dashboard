@@ -607,4 +607,3 @@ than it can prove:
 
 ---
 
- a risk label (Excellent/Good/Medium/Poor).
