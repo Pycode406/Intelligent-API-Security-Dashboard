@@ -96,6 +96,13 @@ async function explainFinding(req, res) {
     });
   } catch (err) {
     // Network error, quota exceeded, invalid key, etc. — never crash.
+    console.log("=================================");
+    console.log("GEMINI ERROR");
+    console.log("Status:", err.response?.status);
+    console.log("Data:", JSON.stringify(err.response?.data, null, 2));
+    console.log("Message:", err.message);
+    console.log("=================================");
+
     return res.status(200).json({
       available: false,
       message:
