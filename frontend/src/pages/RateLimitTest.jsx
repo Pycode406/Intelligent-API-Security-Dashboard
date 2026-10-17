@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApiForm from "../components/ApiForm.jsx";
 import ExplainWhy from "../components/ExplainWhy.jsx";
 import { runRateLimitTest } from "../services/api.js";
-
+import { DEMO_API_URL } from "../services/config.js";
 /**
  * RateLimitTest.jsx
  * Dedicated page for the Rate Limiting / Unrestricted Resource
@@ -38,15 +38,15 @@ export default function RateLimitTest() {
 
       <div className="card">
         <p><strong>Try it with the local Demo API:</strong></p>
-        <p>Secure: <code>http://localhost:5000/api/secure/products</code></p>
-        <p>Vulnerable: <code>http://localhost:5000/api/vulnerable/products</code></p>
+        <p>Secure: <code>{DEMO_API_URL}/api/secure/products</code></p>
+        <p>Vulnerable: <code>{DEMO_API_URL}/api/vulnerable/products</code></p>
       </div>
 
       <ApiForm
         onSubmit={handleTest}
         loading={loading}
         buttonLabel="Run Rate Limit Test"
-        defaultUrl="http://localhost:5000/api/vulnerable/products"
+        defaultUrl={`${DEMO_API_URL}/api/vulnerable/products`}
       />
 
       {error && <div className="notice">Error: {error}</div>}

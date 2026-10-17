@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApiForm from "../components/ApiForm.jsx";
 import ExplainWhy from "../components/ExplainWhy.jsx";
 import { runSensitiveDataTest } from "../services/api.js";
-
+import { DEMO_API_URL } from "../services/config.js";
 /**
  * SensitiveDataTest.jsx
  * Dedicated page for the Sensitive Data Exposure check.
@@ -38,15 +38,15 @@ export default function SensitiveDataTest() {
 
       <div className="card">
         <p><strong>Try it with the local Demo API:</strong></p>
-        <p>Secure: <code>http://localhost:5000/api/secure/profile</code></p>
-        <p>Vulnerable: <code>http://localhost:5000/api/vulnerable/profile</code></p>
+        <p>Secure: <code>{DEMO_API_URL}/api/secure/profile</code></p>
+        <p>Vulnerable: <code>{DEMO_API_URL}/api/vulnerable/profile</code></p>
       </div>
 
       <ApiForm
         onSubmit={handleTest}
         loading={loading}
         buttonLabel="Run Sensitive Data Test"
-        defaultUrl="http://localhost:5000/api/vulnerable/profile"
+        defaultUrl={`${DEMO_API_URL}/api/vulnerable/profile`}
       />
 
       {error && <div className="notice">Error: {error}</div>}

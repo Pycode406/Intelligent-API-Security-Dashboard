@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApiForm from "../components/ApiForm.jsx";
 import ExplainWhy from "../components/ExplainWhy.jsx";
 import { runBolaTest } from "../services/api.js";
-
+import { DEMO_API_URL } from "../services/config.js";
 /**
  * BOLATest.jsx
  * Dedicated page for the Broken Object Level Authorization test.
@@ -37,15 +37,15 @@ export default function BOLATest() {
 
       <div className="card">
         <p><strong>Try it with the local Demo API:</strong></p>
-        <p>Secure: <code>http://localhost:5000/api/secure/users/101</code></p>
-        <p>Vulnerable: <code>http://localhost:5000/api/vulnerable/users/101</code></p>
+        <p>Secure: <code>{DEMO_API_URL}/api/secure/users/101</code></p>
+        <p>Vulnerable: <code>{DEMO_API_URL}/api/vulnerable/users/101</code></p>
       </div>
 
       <ApiForm
         onSubmit={handleTest}
         loading={loading}
         buttonLabel="Run BOLA Test"
-        defaultUrl="http://localhost:5000/api/vulnerable/users/101"
+        defaultUrl={`${DEMO_API_URL}/api/vulnerable/users/101`}
       />
 
       {error && <div className="notice">Error: {error}</div>}

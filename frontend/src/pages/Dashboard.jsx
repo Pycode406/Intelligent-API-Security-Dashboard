@@ -5,7 +5,7 @@ import SecurityChecks from "../components/SecurityChecks.jsx";
 import VulnerabilityList from "../components/VulnerabilityList.jsx";
 import Recommendations from "../components/Recommendations.jsx";
 import { runFullScan } from "../services/api.js";
-
+import DEMO_API_URL from "../services/config.js";
 /**
  * Dashboard.jsx
  * Main scan page: enter a URL, run all checks, view score + results.
@@ -41,7 +41,7 @@ export default function Dashboard({ onScanComplete }) {
         onSubmit={handleScan}
         loading={loading}
         buttonLabel="Start Security Scan"
-        defaultUrl="http://localhost:5000/api/secure/users/101"
+        defaultUrl={`${DEMO_API_URL}/api/secure/users/101`}
       />
 
       {error && <div className="notice">Error: {error}</div>}

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import ExplainWhy from "../components/ExplainWhy.jsx";
 import { runPropertyTest } from "../services/api.js";
-
+import { DEMO_API_URL } from "../services/config.js";
 /**
  * PropertyAuthorizationTest.jsx
  * Dedicated page for the Broken Object Property Level Authorization test.
  * Lets the user specify the endpoint, the property, and the test value.
  */
 export default function PropertyAuthorizationTest() {
-  const [url, setUrl] = useState("http://localhost:5000/api/vulnerable/users/101");
+  const [url, setUrl] = useState(`${DEMO_API_URL}/api/vulnerable/users/101`);
   const [property, setProperty] = useState("role");
   const [value, setValue] = useState("admin");
   const [loading, setLoading] = useState(false);
@@ -41,8 +41,8 @@ export default function PropertyAuthorizationTest() {
 
       <div className="card">
         <p><strong>Try it with the local Demo API:</strong></p>
-        <p>Secure: <code>PUT http://localhost:5000/api/secure/users/101</code></p>
-        <p>Vulnerable: <code>PUT http://localhost:5000/api/vulnerable/users/101</code></p>
+        <p>Secure: <code>PUT {DEMO_API_URL}/api/secure/users/101</code></p>
+        <p>Vulnerable: <code>PUT {DEMO_API_URL}/api/vulnerable/users/101</code></p>
       </div>
 
       <form className="card-white" onSubmit={handleSubmit}>
