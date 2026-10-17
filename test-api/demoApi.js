@@ -23,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // ---------------------------------------------------------------------
 // In-memory demo "database" of fake users. Not real data.
@@ -255,7 +255,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0", () => {
   console.log(`Local Demo/Test API running at http://localhost:${PORT}`);
   console.log("FOR EDUCATIONAL TESTING ONLY — do not use in production.");
 });

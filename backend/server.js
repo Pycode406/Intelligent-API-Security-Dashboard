@@ -11,7 +11,7 @@ const cors = require("cors");
 const scanRoutes = require("./routes/scanRoutes");
 
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT ||5001;
 
 app.use(cors());
 app.use(express.json());
@@ -31,6 +31,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong on the server." });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0", () => {
   console.log(`Security Scanner Backend running at http://localhost:${PORT}`);
 });
